@@ -1,0 +1,22 @@
+<h2>Sign up2</h2>
+
+<%= form_for @user, url: signup_index_path, method: :post do |f| %>
+  Nickame
+  <%= f.text_field :nickname %>
+  FamilyName
+  <%= f.text_field :family_name %>
+  FirstName
+  <%= f.text_field :first_name %>
+  FamilyName(カナ)
+  <%= f.text_field :family_name_cana %>
+  FirstName(カナ)
+  <%= f.text_field :first_name_cana %>
+  <%= f.fields_for :address do |a| %>
+    Family_name
+    <%= a.text_field :family_name %>
+    First_name
+    <%= a.text_field :first_name %>
+  <% end %>
+
+  <%= f.submit 'Continue' %>
+<% end %>
