@@ -1,0 +1,8 @@
+%h2 Sign up3
+= form_for @user, url: signup_index_path, method: :post do |f|
+  = f.fields_form :address do |a|
+    Family_name
+    \#{a.text_field :family_name}
+    First_name
+    \#{a.text_field :first_name}
+  = f.submit 'Continue'

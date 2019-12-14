@@ -11,4 +11,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :products do
+    collection do
+      get 'delivery_children'
+      get 'category_children' 
+      get 'category_grandchildren'
+      get 'done'
+    end
+  end
+
 end

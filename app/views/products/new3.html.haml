@@ -1,0 +1,31 @@
+= form_for @product, url: products_path, meshod: :post, html: { multipart: true} do |f|
+  .product_select-details
+    .product_select-group
+      .product_header
+        カテゴリー
+      .product_require
+        必須
+    .product_category-select
+      = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+      %i.fa.fa-chevron-down
+    .product_select-children
+
+  .product_delivery-responsibility
+    =f.collection_select :delivery_id, @delivery, :id, :responsibility, { prompt: "---" }, { class: "delivery_select-box", id: "delivery_select" }
+  .product_delivery-way
+  
+  =f.fields_for :product_images do |i|
+    .name 名前
+    =f.text_field :name
+
+    .price 価格
+    = f.text_field :price
+
+    .image 画像
+    =i.file_field :image, name: "product_images[:image][]", id: :myfile, multiple: true
+
+    .preview プレビュー
+    %img{id: :img1, src: "", height: "80", width: "100"}
+  
+  .submit
+  =f.submit "作成"

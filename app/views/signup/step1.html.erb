@@ -1,9 +1,0 @@
-<h2>Sign up</h2>
-
-<%= form_for @user, url: step2_signup_index_path, method: :get do |f| %>
-  email
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  password
-  <%= f.password_field :password, autocomplete: "new-password" %>
-  <%= f.submit 'Continue' %>
-<% end %>

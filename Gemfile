@@ -66,3 +66,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'ancestry'
+gem "jquery-rails"
